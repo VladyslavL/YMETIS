@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8">
+      <title>YMetis</title>
+      <meta http-equiv="content-language" content="ru">
+      <meta name="description" content="">
+      <meta name="keywords" content="YMetis">
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="YMetis" />
+      <meta property="og:type" content="" />
+      <meta property="og:image" content="images/title.jpg" />
+      <meta property="og:description" content="YMetis" />
+      <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no">
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="favicon.png" type="image/png">
+      <link href="css/style.css" rel="stylesheet" type="text/css">
+      <script src="js/libs.js"></script>
+      <script src="js/main.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCVTacYbB7V_Yxqf2gqPG_SOVVop6rmS4"></script>
+   </head>
+   <body>
+      <aside class="aside mes">
+         <a href="#" class="aside__link message">
+            <svg  xmlns="http://www.w3.org/2000/svg" viewbox="0 0 22 13">
+               <path fill="#FFF" fill-rule="evenodd" d="M21.907 12.283c-2.387-1.86-4.765-3.714-7.163-5.583 2.391-1.997 4.771-3.985 7.171-5.99.083.334.077 11.3-.008 11.573zm-6.585-7.38c-1.249 1.044-2.497 2.09-3.745 3.136-.348.291-.834.295-1.178.008-2.223-1.861-4.447-3.721-6.671-5.581C2.79 1.682 1.853.897.915.113.883.087.845.067.81.044.818.028.827.013.835-.002h20.339c-.125.109-.215.191-.309.269-1.847 1.546-3.696 3.09-5.543 4.636zM.037 12.3c-.017-.151-.041-.266-.041-.38-.002-3.621-.002-7.241 0-10.861 0-.106.021-.213.037-.364C2.443 2.708 4.824 4.696 7.222 6.7 4.826 8.568 2.451 10.419.037 12.3zm9.096-3.997c.252.209.499.423.757.624.649.505 1.541.511 2.183-.001.634-.505 1.251-1.03 1.892-1.559 2.389 1.866 4.779 3.733 7.213 5.635H.788c2.429-1.898 4.816-3.763 7.214-5.636.379.314.755.625 1.131.937z"/>
+            </svg>
+         </a>
+      </aside>
+      <aside class="aside in">
+         <a href="#" class="aside__link linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16.5 16">
+               <path fill="#FFF" fill-rule="evenodd" d="M10.114 6.737c-.006-.109-.011-.169-.011-.228-.001-.348-.005-.696.004-1.043.003-.139-.036-.189-.181-.189-1.054.006-2.108.006-3.162 0-.157 0-.2.05-.199.207.011 1.409.017 2.817.016 4.225-.001 2.018-.008 4.037-.019 6.056-.001.166.047.211.211.211 1.031-.008 2.063-.005 3.094-.005.237 0 .237 0 .237-.246 0-1.95.01-3.9-.004-5.85-.007-.994.727-1.889 1.618-2.013.777-.109 1.54.17 1.861.995.188.484.229.986.23 1.494.004 1.784 0 3.569-.001 5.354 0 .267 0 .267.258.267h3.009c.274 0 .274 0 .274-.283.001-1.682.003-3.365.002-5.047 0-.911.014-1.824-.243-2.713-.27-.931-.735-1.728-1.557-2.27-.772-.508-1.636-.677-2.545-.627-1.171.066-2.104.573-2.772 1.553-.027.039-.059.075-.12.152zm-9.035 3.886v5.096c0 .252.001.252.257.252h3.025c.258.001.259.001.259-.26V5.536c0-.253-.001-.255-.254-.255-1.014-.002-2.028-.001-3.042-.001-.245 0-.245.001-.245.247v5.096zM2.785.125c-.132.022-.371.041-.597.106-.655.189-1.1.616-1.256 1.285-.168.719 0 1.366.575 1.854.58.494 1.264.55 1.972.37 1.111-.282 1.682-1.447 1.222-2.493C4.357.46 3.709.151 2.785.125z"/>
+            </svg>
+         </a>
+      </aside>
+      <header class="header-menu">
+         <div class="header-menu__row flex row aic jcsb">
+            <div class="header-menu__row--logo">
+               <a href="#home" class="header-menu__row--logo__link link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 127 32" preserveAspectRatio="xMidYMid meet">
+                     <path fill="#FFF" fill-rule="evenodd" d="M119.169 4.824c-1.713 0-2.686.689-2.686 1.837 0 1.057.88 1.608 3.658 2.572 4.307 1.47 6.113 3.629 6.159 6.936 0 4.18-3.334 7.257-9.817 7.257-2.963 0-6.38-1.414-8.093-2.332l1.25-5.007c1.297.781 4.76 2.471 6.843 2.471 2.13 0 3.01-.735 3.01-1.884 0-1.148-.694-1.699-3.334-2.572-4.677-1.562-6.482-4.088-6.436-6.752 0-4.18 3.612-7.349 9.215-7.349 2.639 0 5.777.597 7.167 1.286l-1.251 4.823c-1.018-.551-3.74-1.286-5.685-1.286zm-15.092 12.275h-.022v5.375H98.68v-5.375h-.022V5.751h-.017V.376h5.452v5.375h-.016v11.348zm-16.848 5.375H81.81V5.751h-6.925V.376h19.268v5.375h-6.924v16.723zm-33.55-2.688V3.063c0-1.463 1.235-2.687 2.71-2.687H71.11v5.375H59.098v2.986h11.109v5.376H59.098v2.986H71.11v5.375H56.389c-1.475 0-2.71-1.224-2.71-2.688zM44.124 10.2l-5.991 6.928-5.991-6.928v12.274h-5.419V11.966l5.736-9.558 5.674 6.538 6.894-7.943c.481-.537 1.174-.896 1.956-.896 1.415 0 2.559 1.165 2.559 2.538v19.829h-5.418V10.2zM15.15 22.474H9.731v-7.048L.7.376h6.442l5.299 8.958L17.74.376h6.442l-9.032 15.05v7.048zm110.326 9.525H9.629v-1.125h115.847v1.125z"/>
+                  </svg>
+               </a>
+            </div>
+            <div class="header-menu__row--menu">
+               <a href="#" class="header-menu__row--menu__link">
+               <span></span>
+               <span></span>
+               <span></span>
+               </a>
+               <div class="list-menu-hidden">
+                  <ul class="list-menu flex row ais jcsb">
+                     <li data-menuanchor="about" class="active"><a class="list-link" href="#about">About Y</a></li>
+                     <li data-menuanchor="services"><a class="list-link" href="#services">Services</a></li>
+                     <li data-menuanchor="careers"><a class="list-link" href="#careers">Careers</a></li>
+                     <li data-menuanchor="contact"><a class="list-link" href="#contact">Contact</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="main">
+         <div class="section" data-anchor="home">
+            
+            
+            <div class="section-content">
+               <div class="section-content--home">
+                  <div class="description description--home flex column aic jcc">
+                     <div class="home-text  ">
+                        <h1 class="title title-h1 text-left">insight inside</h1>
+                        <p class="title-text abs text-left">More than a managed services firm</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="section with-text" data-anchor="about">
+            <div class="section-content">
+               <div class="section-content--about">
+                  <div class="description description--page">
+                     <h2 class="title title-h2 text-left">about ymetis</h2>
+                     <p class="title-text text-left">We transform businesses at scale with our wide range of managed services …but we do so through a unique, co-development model.</p>
+                     <a href="#" class="title-link" data-sheet="about"><span>Read more</span></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="section with-text" data-anchor="services">
+            <div class="section-content">
+               <div class="section-content--services">
+                  <div class="description description--page">
+                     <h2 class="title title-h2 text-left">Services</h2>
+                     <p class="title-text text-left">Our services span program management, ecommerce solutions, organisation design, process engineering, technology support and more.</p>
+                     <a href="#" class="title-link" data-sheet="services"><span>Read more</span></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="section with-text" data-anchor="careers">
+            <div class="section-content careers">
+               <div class="section-content--careers">
+                  <div class="description description--page">
+                     <h2 class="title title-h2 text-left">Join us 
+                        at YMetis
+                     </h2>
+                     <p class="title-text text-left">We value talent and build teams with exceptional expertise at their core, allowing us to solve problems and uncover opportunities that others would miss. </p>
+                     <a href="#" class="title-link" data-sheet="careers"><span>Read more</span></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="section with-text footer icon-bg-black" data-anchor="contact">
+            <div class="section-content--contact flex column aic jcsb">
+               <div class="tabs ">
+                  <div class="tabs-nav text-center">
+                     <a href="#" class="tabs-nav__link active">Amsterdam</a>
+                     <a href="#" class="tabs-nav__link">Gurgaon</a>
+                  </div>
+                  <div class="tabs-content active">
+                     <div class="tabs-content__mail flex row aic jcsb">
+                        <p class="tabs-content__text"> Alpha Tower  |  13th floor
+                           De Entree 69, 1101 BH Amsterdam
+                           The Netherlands
+                        </p>
+                        <a href="#" class="title-link black mail"><span>Mail us</span></a>
+                     </div>
+                     <div class="tabs-content__call flex row aic jcsb">
+                        <p class="tabs-content__text">Tel: +31 20 820 45 80
+                           info@ymetis.com
+                        </p>
+                        <a href="#" class="title-link black call"><span>Call us</span></a>
+                     </div>
+                     <p class="general-site">Also visit our parent company at <a href="#" class="general-site__link">YGROUP.com</a></p>
+                  </div>
+                  <div class="tabs-content">
+                     <div class="tabs-content__mail flex row aic jcsb">
+                        <p class="tabs-content__text"> Alpha Tower123  |  13th floor
+                           De Entree 69, 1101 BH Amsterdam
+                           The Netherlands
+                        </p>
+                        <a href="#" class="title-link black mail"><span>Mail us</span></a>
+                     </div>
+                     <div class="tabs-content__call flex row aic jcsb">
+                        <p class="tabs-content__text">Tel: +31 20 820 45 80
+                           info@ymetis.com
+                        </p>
+                        <a href="#" class="title-link black call"><span>Call us</span></a>
+                     </div>
+                     <p class="general-site">Also visit our parent company at <a href="#" class="general-site__link">YGROUP.com</a></p>
+                  </div>
+               </div>
+               <div class="maps">
+                  <div class="map" id="map">
+                  </div>
+                  <div class="copyright">
+                     © Ymetis 2018
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+<div class="backgrounds">
+    <div class="section active" data-back="home">
+      <div class="section-bg">
+        <img src="images/bg1.jpg" alt="">
+      </div>
+      <div class="section-mask">
+               <svg>
+                  <defs>
+                     <mask id="mask" x="0" y="0" width="100%" height="100%" >
+                        <rect class="alpha" x="0" y="0" width="100%" height="100%"/>
+                        <text class="title" x="50%" y="50%" dy=".355em">Y</text>
+                     </mask>
+                  </defs>
+                  <rect class="base" x="0" y="0" width="100%" height="100%"/>
+               </svg>
+            </div>
+    </div>
+    <div class="section with-text" data-back="about">
+      <div class="section-bg">
+        <img src="images/bg2n.jpg" alt="">
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="section with-text" data-back="services">
+      <div class="section-bg">
+        <img src="images/bg3n.jpg" alt="">
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="section with-text" data-back="careers">
+      <div class="section-bg">
+        <img src="images/bg4n.jpg" alt="">
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="section footer" data-back="contact">
+      <div class="section-bg">
+        <img src="images/bg5n.jpg" alt="">
+      </div>
+    </div>
+</div>
+
+
+      <aside class="sheet" data-page="careers">
+         <div class="flex row ais jcsb">
+            <div class="page" >
+               <div class="page-header flex row aic jcsb">
+                  <a href="#" class="page-logo">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 127 32" preserveAspectRatio="xMidYMid meet">
+                        <path fill="#333" fill-rule="evenodd" d="M119.169 4.824c-1.713 0-2.686.689-2.686 1.837 0 1.057.88 1.608 3.658 2.572 4.307 1.47 6.113 3.629 6.159 6.936 0 4.18-3.334 7.257-9.817 7.257-2.963 0-6.38-1.414-8.093-2.332l1.25-5.007c1.297.781 4.76 2.471 6.843 2.471 2.13 0 3.01-.735 3.01-1.884 0-1.148-.694-1.699-3.334-2.572-4.677-1.562-6.482-4.088-6.436-6.752 0-4.18 3.612-7.349 9.215-7.349 2.639 0 5.777.597 7.167 1.286l-1.251 4.823c-1.018-.551-3.74-1.286-5.685-1.286zm-15.092 12.275h-.022v5.375H98.68v-5.375h-.022V5.751h-.017V.376h5.452v5.375h-.016v11.348zm-16.848 5.375H81.81V5.751h-6.925V.376h19.268v5.375h-6.924v16.723zm-33.55-2.688V3.063c0-1.463 1.235-2.687 2.71-2.687H71.11v5.375H59.098v2.986h11.109v5.376H59.098v2.986H71.11v5.375H56.389c-1.475 0-2.71-1.224-2.71-2.688zM44.124 10.2l-5.991 6.928-5.991-6.928v12.274h-5.419V11.966l5.736-9.558 5.674 6.538 6.894-7.943c.481-.537 1.174-.896 1.956-.896 1.415 0 2.559 1.165 2.559 2.538v19.829h-5.418V10.2zM15.15 22.474H9.731v-7.048L.7.376h6.442l5.299 8.958L17.74.376h6.442l-9.032 15.05v7.048zm110.326 9.525H9.629v-1.125h115.847v1.125z"/>
+                     </svg>
+                  </a>
+                  </a>
+                  <a href="#" class="page-close">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="42.624" height="43.968">
+                        <path fill="#333" fill-rule="evenodd" d="M31.556 29.228l-2.828 2.828L16 19.328 3.272 32.056.444 29.228 13.172 16.5.444 3.772 3.272.943 16 13.672 28.728.943l2.828 2.829L18.828 16.5l12.728 12.728z"/>
+                     </svg>
+                  </a>
+               </div>
+               <div class="page-content">
+                  <div class="page-content--careers">
+                     <div class="page-text">
+                        <h2 class="page-title">Join us</h2>
+                        <p class="page-description">At YMetis, you will be part of a large group, with the development energy of a start-up. While you will enjoy the dynamism and steep career trajectory that comes with the start-up environment, being part of the larger YGroup will allow for significant international and cross-functional exposure.
+                           So, whether you think in code, words, pictures or numbers, if you want to create lasting impact and work with bright minds from different backgrounds, YMetis could be the right place for you!
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="page-mask">
+               <svg>
+                  <defs>
+                     <mask id="pagemask" x="0" y="0" width="100%" height="100%" >
+                        <rect class="alpha" x="0" y="0" width="100%" height="100%"/>
+                        <text class="title" x="50%" y="50%" dy=".355em">Y</text>
+                     </mask>
+                  </defs>
+                  <rect class="base" x="0" y="0" width="100%" height="100%"/>
+               </svg>
+            </div>
+         </div>
+      </aside>
+      <aside class="sheet" >
+         <div class="flex row ais jcsb">
+            <div class="page flex column ais jcs" data-page="careers">
+               <div class="page-header flex row aic jcsb">
+                  <a href="#" class="page-logo">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 127 32" preserveAspectRatio="xMidYMid meet">
+                        <path fill="#333" fill-rule="evenodd" d="M119.169 4.824c-1.713 0-2.686.689-2.686 1.837 0 1.057.88 1.608 3.658 2.572 4.307 1.47 6.113 3.629 6.159 6.936 0 4.18-3.334 7.257-9.817 7.257-2.963 0-6.38-1.414-8.093-2.332l1.25-5.007c1.297.781 4.76 2.471 6.843 2.471 2.13 0 3.01-.735 3.01-1.884 0-1.148-.694-1.699-3.334-2.572-4.677-1.562-6.482-4.088-6.436-6.752 0-4.18 3.612-7.349 9.215-7.349 2.639 0 5.777.597 7.167 1.286l-1.251 4.823c-1.018-.551-3.74-1.286-5.685-1.286zm-15.092 12.275h-.022v5.375H98.68v-5.375h-.022V5.751h-.017V.376h5.452v5.375h-.016v11.348zm-16.848 5.375H81.81V5.751h-6.925V.376h19.268v5.375h-6.924v16.723zm-33.55-2.688V3.063c0-1.463 1.235-2.687 2.71-2.687H71.11v5.375H59.098v2.986h11.109v5.376H59.098v2.986H71.11v5.375H56.389c-1.475 0-2.71-1.224-2.71-2.688zM44.124 10.2l-5.991 6.928-5.991-6.928v12.274h-5.419V11.966l5.736-9.558 5.674 6.538 6.894-7.943c.481-.537 1.174-.896 1.956-.896 1.415 0 2.559 1.165 2.559 2.538v19.829h-5.418V10.2zM15.15 22.474H9.731v-7.048L.7.376h6.442l5.299 8.958L17.74.376h6.442l-9.032 15.05v7.048zm110.326 9.525H9.629v-1.125h115.847v1.125z"/>
+                     </svg>
+                  </a>
+                  </a>
+                  <a href="#" class="page-close">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="42.624" height="43.968">
+                        <path fill="#333" fill-rule="evenodd" d="M31.556 29.228l-2.828 2.828L16 19.328 3.272 32.056.444 29.228 13.172 16.5.444 3.772 3.272.943 16 13.672 28.728.943l2.828 2.829L18.828 16.5l12.728 12.728z"/>
+                     </svg>
+                  </a>
+               </div>
+               <div class="page-content">
+                  <div class="page-content--careers">
+                     <div class="page-text">
+                        <h2 class="page-title">Join us</h2>
+                        <p class="page-description">At YMetis, you will be part of a large group, with the development energy of a start-up. While you will enjoy the dynamism and steep career trajectory that comes with the start-up environment, being part of the larger YGroup will allow for significant international and cross-functional exposure.</p>
+                        <p class="page-description">
+                           So, whether you think in code, words, pictures or numbers, if you want to create lasting impact and work with bright minds from different backgrounds, YMetis could be the right place for you!
+                        </p>
+                     </div>
+                     <div class="page-items">
+                        <h4 class="transform__title">
+                           careers
+                        </h4>
+                        <a href="#" data-sheet="careers-detail" class="page-items__item link-detail">
+                           <h3 class="page-items__title">Tableau expert</h3>
+                           <p class="page-items__role">Lead role</p>
+                           <p class="page-items__description">
+                              We are looking for data visualization consultants who can be a Tableau Jedi and be the go to person for all complex problem solving which requires understanding of the tool. The person will work
+                           </p>
+                        </a>
+                        <a href="#" data-sheet="careers-detail" class="page-items__item link-detail">
+                           <h3 class="page-items__title">data engineer</h3>
+                           <p class="page-items__role">Lead role</p>
+                           <p class="page-items__description">
+                              We are looking for Professionals with 6 – 10 years’ experience in Data Engineering and exposure to SAP HANA enterprise data warehousing. The candidate should have ability to lead point to point data
+                           </p>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="page flex column ais jcs" data-page="services">
+               <div class="page-header flex row aic jcsb">
+                  <a href="#" class="page-logo">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 127 32" preserveAspectRatio="xMidYMid meet">
+                        <path fill="#333" fill-rule="evenodd" d="M119.169 4.824c-1.713 0-2.686.689-2.686 1.837 0 1.057.88 1.608 3.658 2.572 4.307 1.47 6.113 3.629 6.159 6.936 0 4.18-3.334 7.257-9.817 7.257-2.963 0-6.38-1.414-8.093-2.332l1.25-5.007c1.297.781 4.76 2.471 6.843 2.471 2.13 0 3.01-.735 3.01-1.884 0-1.148-.694-1.699-3.334-2.572-4.677-1.562-6.482-4.088-6.436-6.752 0-4.18 3.612-7.349 9.215-7.349 2.639 0 5.777.597 7.167 1.286l-1.251 4.823c-1.018-.551-3.74-1.286-5.685-1.286zm-15.092 12.275h-.022v5.375H98.68v-5.375h-.022V5.751h-.017V.376h5.452v5.375h-.016v11.348zm-16.848 5.375H81.81V5.751h-6.925V.376h19.268v5.375h-6.924v16.723zm-33.55-2.688V3.063c0-1.463 1.235-2.687 2.71-2.687H71.11v5.375H59.098v2.986h11.109v5.376H59.098v2.986H71.11v5.375H56.389c-1.475 0-2.71-1.224-2.71-2.688zM44.124 10.2l-5.991 6.928-5.991-6.928v12.274h-5.419V11.966l5.736-9.558 5.674 6.538 6.894-7.943c.481-.537 1.174-.896 1.956-.896 1.415 0 2.559 1.165 2.559 2.538v19.829h-5.418V10.2zM15.15 22.474H9.731v-7.048L.7.376h6.442l5.299 8.958L17.74.376h6.442l-9.032 15.05v7.048zm110.326 9.525H9.629v-1.125h115.847v1.125z"/>
+                     </svg>
+                  </a>
+                  </a>
+                  <a href="#" class="page-close">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="42.624" height="43.968">
+                        <path fill="#333" fill-rule="evenodd" d="M31.556 29.228l-2.828 2.828L16 19.328 3.272 32.056.444 29.228 13.172 16.5.444 3.772 3.272.943 16 13.672 28.728.943l2.828 2.829L18.828 16.5l12.728 12.728z"/>
+                     </svg>
+                  </a>
+               </div>
+               <div class="page-content">
+                  <div class="page-content--services">
+                     <div class="page-text">
+                        <h2 class="page-title">Services</h2>
+                        <p class="page-description">Our services span program management, ecommerce solutions, organisation design, process engineering, technology support and more.</p>
+                     </div>
+                     <div class="page-items">
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">ECOMMERCE</h3>
+                           <p class="page-items__description">
+                              We use rigorous, fact-based analyses to help companies define their ecommerce agendas, and constantly develop their teams and make hard choices on where to play and how to win.
+                           </p>
+                        </div>
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">ORGANIZATIONAL
+                              RE-DESIGN
+                           </h3>
+                           <p class="page-items__description">
+                              We use rigorous, fact-based analyses to help companies define their ecommerce agendas, and constantly develop their teams and make hard choices on where to play and how to win.
+                           </p>
+                        </div>
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">TECHNOLOGY 
+                              SUPPORT
+                           </h3>
+                           <p class="page-items__description">
+                              We use rigorous, fact-based analyses to help companies define their ecommerce agendas, and constantly develop their teams and make hard choices on where to play and how to win.
+                           </p>
+                        </div>
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">CONSUMER &
+                              PRODUCT INSIGHTS
+                           </h3>
+                           <p class="page-items__description">
+                              We use rigorous, fact-based analyses to help companies define their ecommerce agendas, and constantly develop their teams and make hard choices on where to play and how to win.
+                           </p>
+                        </div>
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">DIGITALISATION</h3>
+                           <p class="page-items__description">
+                              We use rigorous, fact-based analyses to help companies define their ecommerce agendas, and constantly develop their teams and make hard choices on where to play and how to win.
+                           </p>
+                        </div>
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">PERSONALIZATION
+                              SERVICES
+                           </h3>
+                           <p class="page-items__description">
+                              We use rigorous, fact-based analyses to help companies define their ecommerce agendas, and constantly develop their teams and make hard choices on where to play and how to win.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="page flex column ais jcs" data-page="about">
+               <div class="page-header flex row aic jcsb">
+                  <a href="#" class="page-logo">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 127 32" preserveAspectRatio="xMidYMid meet">
+                        <path fill="#333" fill-rule="evenodd" d="M119.169 4.824c-1.713 0-2.686.689-2.686 1.837 0 1.057.88 1.608 3.658 2.572 4.307 1.47 6.113 3.629 6.159 6.936 0 4.18-3.334 7.257-9.817 7.257-2.963 0-6.38-1.414-8.093-2.332l1.25-5.007c1.297.781 4.76 2.471 6.843 2.471 2.13 0 3.01-.735 3.01-1.884 0-1.148-.694-1.699-3.334-2.572-4.677-1.562-6.482-4.088-6.436-6.752 0-4.18 3.612-7.349 9.215-7.349 2.639 0 5.777.597 7.167 1.286l-1.251 4.823c-1.018-.551-3.74-1.286-5.685-1.286zm-15.092 12.275h-.022v5.375H98.68v-5.375h-.022V5.751h-.017V.376h5.452v5.375h-.016v11.348zm-16.848 5.375H81.81V5.751h-6.925V.376h19.268v5.375h-6.924v16.723zm-33.55-2.688V3.063c0-1.463 1.235-2.687 2.71-2.687H71.11v5.375H59.098v2.986h11.109v5.376H59.098v2.986H71.11v5.375H56.389c-1.475 0-2.71-1.224-2.71-2.688zM44.124 10.2l-5.991 6.928-5.991-6.928v12.274h-5.419V11.966l5.736-9.558 5.674 6.538 6.894-7.943c.481-.537 1.174-.896 1.956-.896 1.415 0 2.559 1.165 2.559 2.538v19.829h-5.418V10.2zM15.15 22.474H9.731v-7.048L.7.376h6.442l5.299 8.958L17.74.376h6.442l-9.032 15.05v7.048zm110.326 9.525H9.629v-1.125h115.847v1.125z"/>
+                     </svg>
+                  </a>
+                  </a>
+                  <a href="#" class="page-close">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="42.624" height="43.968">
+                        <path fill="#333" fill-rule="evenodd" d="M31.556 29.228l-2.828 2.828L16 19.328 3.272 32.056.444 29.228 13.172 16.5.444 3.772 3.272.943 16 13.672 28.728.943l2.828 2.829L18.828 16.5l12.728 12.728z"/>
+                     </svg>
+                  </a>
+               </div>
+               <div class="page-content">
+                  <div class="page-content--about">
+                     <div class="page-text">
+                        <h2 class="page-title">ABOUT Ymetis</h2>
+                        <p class="page-description">We transform businesses at scale with our wide range of managed services 
+                           …but we do so through a unique, co-development model.
+                        </p>
+                     </div>
+                     <div class="page-items">
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">WHY YMETIS</h3>
+                           <p class="page-items__description">
+                              Through profit-sharing agreements, joint-ventures, and BOT-models, our partnerships align our priorities entirely with those of our clients, thereby guaranteeing the kind of commitment that’s hard to find elsewhere.
+                           </p>
+                        </div>
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">COMBINED 
+                              STRENGTHS
+                           </h3>
+                           <p class="page-items__description">
+                              We harness our clients’ product or service knowledge and industry experience and our expertise in technology & analytics, so that they can finally benefit from their own data. 
+                           </p>
+                        </div>
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">WHY INNOVATE</h3>
+                           <p class="page-items__description">
+                              To seize the opportunities that come with digitization, leading consumer brands today must rethink the traditional ways of working, adopt an agile attitude and, most importantly, seek access to new skills.
+                           </p>
+                        </div>
+                        <div class="page-items__item">
+                           <h3 class="page-items__title">COLLABORATIVE 
+                              ADVANTAGE
+                           </h3>
+                           <p class="page-items__description">
+                              We help brands on their transformation journey by complementing them with world-class technology and analytics talent, so that they can focus on what they do best – design, produce and market desirable products and services. 
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="page flex column ais jcs" data-page="careers-detail">
+               <div class="page-header flex row aic jcsb">
+                  <a href="#" class="page-logo">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 127 32" preserveAspectRatio="xMidYMid meet">
+                        <path fill="#333" fill-rule="evenodd" d="M119.169 4.824c-1.713 0-2.686.689-2.686 1.837 0 1.057.88 1.608 3.658 2.572 4.307 1.47 6.113 3.629 6.159 6.936 0 4.18-3.334 7.257-9.817 7.257-2.963 0-6.38-1.414-8.093-2.332l1.25-5.007c1.297.781 4.76 2.471 6.843 2.471 2.13 0 3.01-.735 3.01-1.884 0-1.148-.694-1.699-3.334-2.572-4.677-1.562-6.482-4.088-6.436-6.752 0-4.18 3.612-7.349 9.215-7.349 2.639 0 5.777.597 7.167 1.286l-1.251 4.823c-1.018-.551-3.74-1.286-5.685-1.286zm-15.092 12.275h-.022v5.375H98.68v-5.375h-.022V5.751h-.017V.376h5.452v5.375h-.016v11.348zm-16.848 5.375H81.81V5.751h-6.925V.376h19.268v5.375h-6.924v16.723zm-33.55-2.688V3.063c0-1.463 1.235-2.687 2.71-2.687H71.11v5.375H59.098v2.986h11.109v5.376H59.098v2.986H71.11v5.375H56.389c-1.475 0-2.71-1.224-2.71-2.688zM44.124 10.2l-5.991 6.928-5.991-6.928v12.274h-5.419V11.966l5.736-9.558 5.674 6.538 6.894-7.943c.481-.537 1.174-.896 1.956-.896 1.415 0 2.559 1.165 2.559 2.538v19.829h-5.418V10.2zM15.15 22.474H9.731v-7.048L.7.376h6.442l5.299 8.958L17.74.376h6.442l-9.032 15.05v7.048zm110.326 9.525H9.629v-1.125h115.847v1.125z"/>
+                     </svg>
+                  </a>
+                  </a>
+                  <a href="#" class="page-back" data-sheet="careers-detail">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="41.376">
+  <path fill="#333" fill-rule="evenodd" d="M45 17.992H7.948l10.403 10.185-2.849 2.817L.006 15.823l.327-.323-.327-.323L15.502.006l2.849 2.817L6.927 14.008H45v3.984z"/>
+</svg>
+                  </a>
+               </div>
+               <div class="page-content">
+                  <div class="page-content--careers-detail">
+                     <div class="page-text">
+                        <h2 class="page-title">Join us</h2>
+                        <p class="page-description">At YMetis, you will be part of a large group, with the development energy of a start-up. While you will enjoy the dynamism and steep career trajectory that comes with the start-up environment, being part of the larger YGroup will allow for significant international and cross-functional exposure.</p>
+                        <p class="page-description">
+                           So, whether you think in code, words, pictures or numbers, if you want to create lasting impact and work with bright minds from different backgrounds, YMetis could be the right place for you!
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="page-mask">
+               <svg>
+                  <defs>
+                     <mask id="pagemask" x="0" y="0" width="100%" height="100%" >
+                        <rect class="alpha" x="0" y="0" width="100%" height="100%"/>
+                        <text class="title" x="50%" y="50%" dy=".355em">Y</text>
+                     </mask>
+                  </defs>
+                  <rect class="base" x="0" y="0" width="100%" height="100%"/>
+               </svg>
+            </div>
+         </div>
+      </aside>
+   </body>
+</html>

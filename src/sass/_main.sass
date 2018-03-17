@@ -1,0 +1,819 @@
+$font-stack: 'DIN Pro', sans-serif
+$time: .25s
+$greysectionbg: #f8f8f9
+$followbg: #1c1b1b
+$hovercolor: #487fc0
+$colorparag: #ffffff
+$colorpagaglite: #444444
+$colortitle: #151525
+$bgandcolorwhite: #fff
+
+$zindexwrap: 2
+
+
+// svgmask
+$darken: 20%
+$color: rgb(255,255,255)
+$color-alpha: darken( $color, $darken )
+$color-base: rgb(0,0,0)
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+*
+	margin: 0
+	padding: 0
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+	background-position: center
+	background-repeat: no-repeat
+
+h1,h2,h3,h4,h5 
+	font-weight: inherit
+	font-family: $font-stack
+	margin: 0
+	line-height: 1
+
+html 
+	position: relative
+	line-height: 1
+	font-size: 10px
+	-webkit-transition: .15s
+	-o-transition: .15s
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	text-rendering: optimizelegibility
+	-webkit-overflow-scrolling: touch
+	transition: .15s
+
+
+body 
+	font-family: $font-stack
+	font-weight: 400
+	font-size: 1.6rem
+	background-color: $bgandcolorwhite
+	color: $colorparag
+	width: 100%
+	position: relative
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+	-webkit-overflow-scrolling: touch
+
+a 
+	text-decoration: none
+	color: inherit
+	outline: none !important
+
+button,input,textarea 
+	outline: none
+
+section,footer,header 
+	width: 100%
+	position: relative
+
+.greysection
+	background: $greysectionbg
+.followsection
+	background: $followbg
+
+
+// style
+.map
+	position: relative
+
+	width: 100%
+	z-index: 2
+	height: 40rem
+
+.overlay
+	background: rgba(0,0,0, .1)
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 2
+	
+
+.wrapper
+	max-width: 1180px
+	// max-width: 970px
+	min-width: 300px
+	width: 100%
+	position: relative
+	z-index: $zindexwrap
+	padding: 0 3rem
+	height: 100%
+	margin: 0 auto
+
+.flex
+	display: flex
+	&.row
+		flex-direction: row
+		&.aic
+			align-items: center
+		&.ais
+			align-items: flex-start
+		&.aid
+			align-items: flex-end
+		&.aist
+			align-items: stretch
+		&.jcsb
+			justify-content: space-between
+		&.jcs
+			justify-content: flex-start
+		&.jcd
+			justify-content: flex-end
+		&.jcsa
+			justify-content: space-around
+		&.jcc
+			justify-content: center
+		&.wrap
+			flex-wrap: wrap
+	&.column
+		flex-direction: column
+		&.aic
+			align-items: center
+		&.ais
+			align-items: flex-start
+		&.aid
+			align-items: flex-end
+		&.jcsb
+			justify-content: space-between
+		&.jcs
+			justify-content: flex-start
+		&.jcd
+			justify-content: flex-end
+		&.jcsa
+			justify-content: space-around
+		&.jcc
+			justify-content: center
+
+.text
+	&-center
+		text-align: center
+	&-left
+		text-align: left
+	&-right
+		text-align: right
+
+.title-link
+	display: inline-block
+	color: #ffffff
+	font-size: 2rem
+	border-radius: 0.3rem
+	position: relative
+	outline: none
+	border: none
+	font-weight: 500
+	cursor: pointer
+	margin-left: 16rem
+	text-align: center
+	transition: all 0.5s linear
+	max-width: 25rem
+	width: 100%
+	max-height: 7rem
+	line-height: 7rem
+	height: 100%
+	& span
+		position: relative
+		display: block
+		width: 100%
+		height: 100%
+		&:before, &:after
+			position: absolute
+			content: ''
+			left: 0
+			bottom: 0
+			background: rgba(255,255,255, 0.5)
+			transition: all .5s ease
+		&:before 
+			width: .2rem
+			height: 50%
+
+		&:after 
+			width: 20%
+			height: .2rem
+		&:hover
+			&:before
+				height: 100%
+			&:after
+				width: 100%
+
+
+	&:before, &:after 
+		position: absolute
+		content: ''
+		right: 0
+		top: 0
+		background: rgba(255,255,255, 0.5)
+		transition: all .5s linear
+	&:before
+		height: 50%
+		width: .2rem
+	&:after 
+		width: 20%
+		height: .2rem
+
+	&.black
+		margin-left: 0
+		color: #333333
+		&:before, &:after 
+			background: rgba(51, 51, 51, 0.1)
+		& span
+			&:before, &:after
+				background: rgba(51, 51, 51, 0.1)
+		// width: 100%
+	&:hover
+		&:before
+			height: 100%
+		&:after
+			width: 100%
+
+
+
+#fp-nav
+	top: 50%
+	&.right
+		right: 3rem
+	& ul
+		& li
+			width: 1.2rem
+			height: 1.2rem
+			margin: 3rem 0 0 0
+			&:nth-child(1)
+				margin-top: 0
+			&:hover
+				& a
+					& span
+						width: 1.2rem
+						margin: 0
+						height: 1.2rem
+						background: #fff
+					&.active
+						& span
+							width: 1.2rem
+							height: 1.2rem
+							margin: 0
+							background: #fff
+					
+			& a
+				& span
+					background: transparent
+					border: none
+					width: 1.2rem
+					height: 1.2rem
+					// box-shadow: 0 0 0 0.1rem #ffffff
+					border: 0.1rem solid #ffffff
+					left: 0
+					margin: 0
+				&.active
+					& span
+						width: 1.2rem
+						height: 1.2rem
+						margin: 0
+						background: #fff
+
+
+
+
+
+
+.header-menu
+	padding: 0 3rem
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 4
+	&__row
+		width: 100%
+		padding: 4.6rem 0 0 0
+		&--logo
+			&__link
+				display: inline-block
+				& svg
+					width: 12.7rem
+					height: 3.2rem
+					& path
+						transition: $time
+		& .list
+			&-menu
+				position: absolute
+				top: 0
+				right: 6rem
+				list-style: none
+				&-hidden
+					display: none
+					&.open
+						// display: block
+				// opacity: 0
+				& li
+					margin: 0 2.5rem
+					transform: translateY(-3rem)
+					opacity: 1
+					transition: $time
+					&:nth-child(1)
+						transform: translateY(-3rem)
+						transition: .4s
+					&:nth-child(2)
+						transform: translateY(-6rem)
+						transition: .6s
+					&:nth-child(3)
+						transform: translateY(-9rem)
+						transition: .8s
+					&:nth-child(4)
+						transform: translateY(-12rem)
+						transition: 1s
+					// display: none
+					
+				&.open
+					// opacity: 1
+
+			&-link
+				// opacity: 0
+				white-space: nowrap
+				display: block
+				color: #ffffff
+				font-size: 1.8rem
+				font-weight: 500
+		&--menu
+			position: relative
+			
+			&__link
+				display: block
+				width: 3.2rem
+				height: 2.1rem
+				position: relative
+				transform: rotate(0deg)
+				transition: $time ease-in-out
+				cursor: pointer
+				& span
+					display: block
+					position: absolute
+					height: .3rem
+					width: 100%
+					background: #fff
+					opacity: 1
+					right: 0
+					transform: rotate(0deg)
+					transition: $time ease-in-out
+					&:nth-child(1)
+						top: 0
+						transform-origin: left center
+					&:nth-child(2) 
+						top: .9rem
+						width: 60%
+						transform-origin: left center
+					&:nth-child(3) 
+						top: 1.8rem
+						width: 80%
+						transform-origin: left center
+				&:hover
+					& span
+						width: 100%
+				&.open
+					& span
+						&:nth-child(1) 
+							transform: rotate(45deg)
+							top: -.3rem
+							right: -.8rem
+						&:nth-child(2) 
+							width: 0%
+							opacity: 0
+						&:nth-child(3) 
+							transform: rotate(-45deg)
+							top: 2rem
+							right: -.8rem
+							width: 100%
+			
+
+.aside
+	position: absolute
+	bottom: 0
+	right: 0
+	z-index: 4
+	& svg
+		& path
+			transition: $time
+	&.mes
+		bottom: 7.5rem
+		right: 3rem
+		& svg
+			width: 2.2rem
+			height: 1.3rem
+			
+
+	&.in
+		bottom: 4rem
+		right: 3.2rem
+		& svg
+			width: 1.8rem
+			height: 1.6rem
+
+	&__link
+		display: block
+			
+		
+
+		
+
+.main
+	z-index: 3
+	.section
+		z-index: 2
+		// position: absolute
+		// top: 0
+		// left: 0
+		position: relative
+		
+		width: 100%
+		
+		&-bg
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			display: none
+			& img
+				width: 100%
+				height: 100%
+				display: block
+				object-fit: cover
+		&-content
+			position: absolute
+			z-index: 3
+			& .home-text
+				position: relative
+				
+
+			& .title
+				color: #ffffff
+				text-transform: uppercase
+				font-weight: 900
+				position: relative
+				padding: 0 9.5rem
+				&:before
+					content: ''
+					position: absolute
+					top: 5rem
+					left: 0
+					width: 5rem
+					height: 0.4rem
+					background: #fff
+				&-h1
+					font-size: 16rem
+					&:before
+						top: 8.5rem
+
+				&-h2
+					font-size: 10rem
+				&-text
+					padding: 4.5rem 9.5rem 0 9.5rem
+					color: #ffffff
+					font-size: 2.6rem
+					font-weight: 400
+					line-height: 4.2rem
+					&.abs
+						position: absolute
+						top: 100%
+						left: 0
+				&-link
+					position: absolute
+					top: 100%
+					margin-top: 7rem
+					left: 0
+
+			&--contact
+				width: 55%
+				height: 100%
+				overflow: auto
+				overflow: -moz-scrollbars-none
+				-ms-overflow-style: none
+				background: #fff
+				position: relative
+				padding-top: 16rem
+				z-index: 3
+				&::-webkit-scrollbar
+					width: 0
+				& .maps
+					position: relative
+					width: 100%
+				& .copyright
+					position: absolute
+					bottom: 3rem
+					left: 3rem
+					z-index: 3
+					color: #333333
+					font-size: 1.6rem
+					font-weight: 400
+					text-transform: uppercase
+				& .tabs
+					height: 100%
+					max-width: 60.5rem
+					width: 100%
+					padding: 1.5rem
+					margin: 0 auto 0 auto
+					&-nav
+						margin-bottom: 14rem
+						&__link
+							display: inline-block
+							color: #666666
+							font-size: 2.6rem
+							font-weight: 400
+							padding: 0 3rem
+							position: relative
+							transition: $time
+							&:after
+								position: absolute
+								bottom: 0
+								right: 0
+								content: '|'
+								font-weight: 400
+								color: rgba(0,0,0, .5)
+								font-size: 1.6rem
+							& + .tabs-nav__link:after
+								content: none
+							&.active
+								color: #000000
+								font-weight: 400
+								cursor: pointer
+					&-content
+						width: 100%
+						display: none
+						&.active
+							display: block
+						& .scrollbar
+							// height: 100%
+							// overflow: scroll
+						&__text
+							color: #666666
+							font-size: 1.8rem
+							font-weight: 400
+							line-height: 2.8rem
+							max-width: 27rem
+						&__mail
+							margin-bottom: 2.5rem
+						& .general
+							&-site
+								margin: 11rem 0 4rem 0
+
+								text-align: center
+								color: #666666
+								font-size: 1.8rem
+								font-weight: 400
+								&__link
+									display: inline-block
+									color: #333333
+									font-weight: 700
+							
+		& .description
+			&--page
+				max-width: 90rem
+			&--home
+				&:before
+					content: ''
+					position: absolute
+					top: 8.5rem
+					left: 0
+					width: 5rem
+					height: 0.4rem
+					background: #fff
+				& .title
+					&:before
+						content: none
+					&-text
+						padding-left: 10rem
+
+				
+
+// page
+.sheet
+	position: absolute
+	top: 0
+	left: 0
+	display: none
+	width: 100%
+	height: 100%
+	z-index: 5
+	// transition: 1ms
+	
+.page
+	position: absolute
+	top: 0
+	left: -100%
+	transition: 1s
+	width: 55%
+	height: 100%
+	background: #fff
+	z-index: 4
+	overflow: hidden
+	&-header
+		width: 100%
+		padding: 4.6rem 3rem 0 3rem
+	&-logo
+		display: block
+		& svg
+			width: 12.7rem
+			height: 3.2rem	
+	&-content
+		padding: 12rem 12rem 0 9.5rem
+		height: 100%
+		width: 100%
+		overflow: auto
+		overflow: -moz-scrollbars-none
+		-ms-overflow-style: none
+		&::-webkit-scrollbar
+			width: 0
+	&-text
+		padding-bottom: 9.5rem
+	&-title
+		color: #333333
+		font-size: 8rem
+		font-weight: 900
+		text-transform: uppercase
+		padding-bottom: 4rem
+	&-description
+		color: #333333
+		font-size: 2.6rem
+		font-weight: 400
+		line-height: 4.2rem
+		padding-bottom: 4.2rem
+	&-mask
+		position: absolute
+		top: 0
+		right: 0
+		width: 45%
+		height: 100%
+		transition: 1s
+		z-index: 4
+		opacity: 0
+		&.active
+			opacity: 1
+		svg
+			width: 100%
+			height: inherit
+			text
+				text-anchor: middle
+			.alpha
+				fill: $color-alpha
+			.title
+				font-size: 50vw
+				font-weight: 900
+				color: transparent
+				font-family: $font-stack
+			.base
+				fill: rgba(0,0,0, 0.7)
+				mask: url(#pagemask)
+				mask-size: cover
+	&-items
+		position: relative
+		padding-left: 19rem
+		& .transform__title
+			position: absolute
+			top: 0
+			left: 0
+			color: rgba(51, 51, 51, .1)
+			font-size: 5.8rem
+			font-weight: 900
+			text-transform: uppercase
+			transform-origin: 2.8rem 2.8rem 0
+			transform: rotate(90deg)
+			
+
+		&__item
+			margin-bottom: 20rem
+			display: block
+			&:last-child
+				margin-bottom: 0
+		&__title
+			color: #333333
+			font-size: 4rem
+			font-weight: 900
+			text-transform: uppercase
+			margin-bottom: 3.6rem
+		&__role
+			margin-top: 1.5rem
+			
+			color: #333333
+			font-size: 2rem
+			font-weight: 400
+		&__description
+			color: #666666
+			line-height: 3.6rem
+			font-size: 2rem
+			font-weight: 400
+
+.backgrounds
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	z-index: 2
+	& .section
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		opacity: 0
+		transition: opacity 1s
+		&-bg
+			& img
+				margin-top: -2rem
+				display: block
+				width: 110vw
+				object-fit: cover
+				height: 110vh
+				transition: 1s all
+		&-mask
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 2
+			svg
+				width: 100%
+				height: inherit
+				text
+					text-anchor: middle
+				.alpha
+					fill: $color-alpha
+				.title
+					font-size: 65vw
+					font-weight: 900
+					color: transparent
+					font-family: $font-stack
+				.base
+					fill: $color-base
+					mask: url(#mask)
+					mask-size: cover
+		&.active
+			opacity: 1
+			&.down
+				& .section-bg
+					& img
+						animation: next_slider 1s
+						animation-fill-mode: forwards
+			&.up
+				& .section-bg
+					& img
+						animation: prev_slider 1s
+						animation-fill-mode: forwards
+
+.section-content
+	position: absolute
+	top: 50%
+	left: 0
+	transform: translateY(-50%)
+	opacity: 0
+	z-index: 3
+	transition: 1s all
+	transition-delay: 500ms
+	
+.fp-section
+	&.active 
+		& .section
+			&-content
+				opacity: 1
+				transition: 1s all linear
+				transition-delay: 250ms
+		& + .with-text 
+			& .section
+				&-content
+					cursor: pointer
+					top: 9rem
+					opacity: 0.7
+					&.careers
+						top: 14rem
+					& .description
+						transition: 1s all
+						// transition-delay: 250ms
+					&:hover
+						cursor: pointer
+						opacity: 1
+						& .description
+							transform: translateY(-1rem)
+			
+
+
++keyframes(prev_slider)
+  from
+    margin-top: -4rem
+  to
+    margin-top: -2rem
+
++keyframes(next_slider)
+  from
+    margin-top: 0rem
+  to
+    margin-top: -2rem
