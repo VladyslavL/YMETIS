@@ -1,0 +1,34 @@
+$font-stack: 'DIN Pro', sans-serif
+$time: .25s
+$greysectionbg: #f8f8f9
+$followbg: #1c1b1b
+$hovercolor: #487fc0
+$colorparag: #ffffff
+$colorpagaglite: #444444
+$colortitle: #151525
+$bgandcolorwhite: #fff
+
+$zi-overlay: 2
+$zi-content: 3
+$zi-navs: 4
+$zi-page-overlay: 5 
+$zi-page: 6
+
+
+// svgmask
+$darken: 20%
+$color: rgb(255,255,255)
+$color-alpha: darken( $color, $darken )
+$color-base: rgb(0,0,0)
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+$page-scroll-speed: 0.5s

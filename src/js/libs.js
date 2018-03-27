@@ -1,2 +1,6 @@
 @@include('./node_modules/jquery/dist/jquery.min.js')
+@@include('./node_modules/gsap/TweenMax.js')
+@@include('./node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js')
+@@include('./node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js')
+@@include('./node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js')
 @@include('./node_modules/fullpage.js/dist/jquery.fullpage.min.js')
