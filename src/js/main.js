@@ -12,6 +12,7 @@ $(document).ready(function ($) {
 		verticalCentered: false,
 		lazyLoading: false,
 		navigation: true,
+		normalScrollElements: ".page.footer",
 		navigationPosition: 'right',
 		anchors: ['page1', 'page2', 'page3', 'page4', 'last'],
 		easingcss3: 'ease',
@@ -215,14 +216,13 @@ $(document).ready(function ($) {
 		$(this)
 			.addClass('active').siblings().removeClass('active')
 			.closest('.tabs').find('.tabs-content').removeClass('active').eq($(this).index()).addClass('active');
-
 	});
 	
-	var controller;		
+	var controller;
 	var pageAnimation = function(page){
 		var selector = $('[data-page=' + page + ']').find('.page-content_wrap')[0];
+		var backToTopElem = $('[data-page=' + page + ']').find('.back-to-top')[0];
 		console.log(selector)
-		// controller = new ScrollMagic.Controller({container: ".page.active .page-content_wrap", loglevel: 3});
 		controller = new ScrollMagic.Controller({container: selector, loglevel: 3});
 
 		var pageLogo = TweenMax.to((".main-logo"), 1, {
@@ -235,6 +235,35 @@ $(document).ready(function ($) {
 		})
 		.setTween(pageLogo)
 		.addTo(controller);
+
+		console.log(backToTopElem)
+
+		var backToTop = TweenMax.to((backToTopElem), 1, {
+			y: '-250%'
+		});
+
+		var backToTopScene = new ScrollMagic.Scene({
+			triggerHook: 0,
+			duration: '100%'
+		})
+		.setTween(backToTop)
+		// .addIndicators({name: })
+		.addTo(controller);
+
+		// $('.page-active').each(function(index){
+		// 	var item = this;
+
+		// 	var backToTop = TweenMax.from(($(item).find('.back-to-top')), 1, {
+		// 		y: '500%'
+		// 	});
+	
+		// 	var backToTopScene = new ScrollMagic.Scene({
+		// 		triggerHook: 0,
+		// 		duration: '150%'
+		// 	})
+		// 	.setTween(backToTop)
+		// 	.addTo(controller);
+		// })
 
 		$('.page.active .page-items__item').each(function(index){
 			var item = this,
@@ -253,7 +282,7 @@ $(document).ready(function ($) {
 		$('.page.active .parallax').each(function(index){
 			var item = this;
 
-			console.log(this)
+			// console.log(this)
 			var imageParallax = TweenMax.to(this, 1, {
 				y: '-100px'
 			})
@@ -266,6 +295,27 @@ $(document).ready(function ($) {
 			.setTween(imageParallax)
 			.addTo(controller)
 		})
+	}
+
+	var controllerDetail;
+	var pageAnimationDetail = function(page){
+		var selector = $('[data-page=' + page + ']').find('.page-content_wrap')[0];
+		var backToTopElem = $('[data-page=' + page + ']').find('.back-to-top')[0];
+		console.log(selector)
+		controllerDetail = new ScrollMagic.Controller({container: selector, loglevel: 3});
+
+		console.log(backToTopElem)
+
+		var backToTop = TweenMax.to((backToTopElem), 1, {
+			y: '-250%'
+		});
+
+		var backToTopScene = new ScrollMagic.Scene({
+			triggerHook: 0,
+			duration: '100%'
+		})
+		.setTween(backToTop)
+		.addTo(controllerDetail);
 	}
 
 	// pages
@@ -281,6 +331,7 @@ $(document).ready(function ($) {
 	$('.page-back').click(function (event) {
 		page = $(this).data('sheet')
 		$('[data-page=' + page + ']').removeClass('active')
+		controllerDetail.destroy(true);		
 		return false
 	});
 
@@ -296,9 +347,22 @@ $(document).ready(function ($) {
 		return false
 	});
 
+	$('.nav-menu a[data-sheet]').click(function (event) {
+		page = $(this).data('sheet');
+		pageIndex = $('[data-page=' + page + ']');
+
+		$.fn.fullpage.setAllowScrolling(false);
+		$('[data-page=' + page + ']').addClass('active');
+		$('.page-mask').addClass('active')
+		$('body').addClass('page-opened')
+		pageAnimation(page);
+		// return false
+	});
+
 	$('.link-detail').click(function (event) {
 		page = $(this).data('sheet')
 		$('[data-page=' + page + ']').addClass('active')
+		pageAnimationDetail(page);
 		return false
 	});
 

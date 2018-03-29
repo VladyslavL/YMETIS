@@ -9,8 +9,11 @@ html {
 	font-size: 10px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizelegibility;
+	// text-rendering: optimizelegibility;
 	-webkit-overflow-scrolling: touch;
+	@include media(xl){
+		font-size: 10px;
+	}
 }
 
 body {
@@ -114,7 +117,7 @@ b {
 .title-link {
 	display: block;
 	color: #fff;
-	font-size: 2rem;
+	font-size: 20px;
 	position: relative;
 	outline: none;
 	border: none;
@@ -375,12 +378,15 @@ b {
 .direct-line {
 	position: fixed;
 	z-index: $zi-navs;
-	top: 50%;
+	top: 40%;
 	left: 0;
 	width: 5rem;
 	height: 4px;
 	transform: translateY(-50%);
 	background: #fff;
+	@include media(xl){
+		top: 50%;
+	}
 }
 
 .main {
@@ -402,13 +408,16 @@ b {
 		}
 		&-content {
 			height: auto;
-			top: 50%;
+			top: 40%;
 			position: absolute;
 			z-index: 3;
+			@include media(xl){
+				top: 50%;
+			}
 			.description {
 				position: relative;
 				max-width: 90rem;
-				padding: 0 9.5rem;
+				padding: 0 5rem 0 9.5rem;
 				opacity: 0;
 				transition: opacity $page-scroll-speed ease;
 				&.index-section {
@@ -424,13 +433,19 @@ b {
 					font-size: 16rem;
 				}
 				&-text {
-					padding: 4.5rem 0 0 0;
+					padding: 3rem 0 0 0;
+					@include media(xl) {
+						padding: 4.5rem 0 0 0;						
+					}
 				}
 				&-link {
 					position: absolute;
-					top: calc(100% + 7rem);
+					top: calc(100% + 4rem);
 					margin-left: 16rem;
 					left: 0;
+					@include media(xl) {
+						top: calc(100% + 7rem);						
+					}
 				}
 			}
 		}
@@ -461,6 +476,7 @@ b {
 	background: #fff;
 	z-index: 6;
 	overflow: hidden;
+	font-size: 10px;
 	&.active {
 		transform: translateX(0);
 	}
@@ -471,19 +487,23 @@ b {
 		top: 3rem;
 		z-index: 2;
 	}
+	p{
+		// font-size: 2.6rem;
+	}
 	.back-to-top {
 		position: absolute;
-		right: 30px;
-		top: 50%;
-		transform: translateY(-50%);
+		right: 20px;
+		top: 100%;
+		// transform: translate(50vh,-50%);
 		writing-mode: tb-rl;
+		white-space: nowrap;
 		z-index: $zi-overlay;
 		svg {
 			margin-bottom: 10px;
 		}
 	}
 	&-content {
-		padding: 8.5rem 8.5rem 0 8.5rem;
+		padding: 8.5em 8.5rem 0 8.5em;
 		margin-top: 100px;
 		&_wrap {
 			width: calc(100% + 50px);
@@ -576,13 +596,13 @@ b {
 	}
 	&-items {
 		position: relative;
-		padding-left: 8rem;
+		padding-left: 8em;
 		& .transform__title {
 			position: absolute;
 			top: 0;
 			left: 0;
 			color: rgba(51, 51, 51, .1);
-			font-size: 8rem;
+			font-size: 8em;
 			font-weight: 900;
 			text-transform: uppercase;
 			writing-mode: tb-rl;
@@ -597,7 +617,7 @@ b {
 				height: 100%;
 				position: absolute;
 				top: 0;
-				left: 5rem;
+				left: 5em;
 				background-color: #1e1e1e;
 				opacity: 0.3;
 			}
@@ -621,7 +641,7 @@ b {
 			color: #333333;
 			font-size: 4rem;
 			&-wrap {
-				padding-left: 9.5rem;
+				padding-left: 9.5em;
 				min-height: 10rem;
 				position: relative;
 				margin-bottom: 2rem;
@@ -631,7 +651,7 @@ b {
 					height: 100px;
 					width: 5px;
 					top: 0;
-					left: calc(5rem - 15px);
+					left: calc(5em - 15px);
 					transform: translateX(-50%);
 					z-index: 2;
 					background-color: #333;
@@ -643,14 +663,14 @@ b {
 			color: #333333;
 			font-size: 2rem;
 			font-weight: 400;
-			padding-left: 9.5rem;
+			padding-left: 9.5em;
 		}
 		&__description {
 			color: #666666;
 			font-size: 2rem;
 			font-weight: 400;
 			line-height: 1.8;
-			padding-left: 9.5rem;
+			padding-left: 9.5em;
 		}
 		&_icon {
 			position: absolute;
@@ -661,7 +681,6 @@ b {
 	}
 
 	&.footer {
-		padding-top: 16rem;
 		& .maps {
 			position: relative;
 			width: 100%;
@@ -679,7 +698,7 @@ b {
 		.tabs {
 			height: 100%;
 			&-nav {
-				margin-bottom: 16rem;
+				padding: 16rem 0;
 				&__link {
 					color: #666;
 					font-size: 2.6rem;
@@ -703,6 +722,10 @@ b {
 				}
 			}
 			&-content {
+				overflow: auto;
+				& > *{
+					flex-shrink: 0;
+				}
 				&:not(.active) {
 					display: none;
 				}
@@ -768,7 +791,7 @@ b {
 		.page-items,
 		.job-content,
 		.page-back,
-		.back-to-top,
+		// .back-to-top,
 		.page-items__title-wrap:after {
 			opacity: 0;
 			animation-fill-mode: both;
@@ -784,8 +807,8 @@ b {
 				animation-name: fadeInLeft;
 				animation-delay: ($page-scroll-speed + 0.7s) / 2;
 			}
-			.page-header,
-			.back-to-top {
+			// .back-to-top,
+			.page-header{
 				animation-name: fadeInLeft;
 				animation-delay: ($page-scroll-speed + 0.51s) / 2;
 			}
