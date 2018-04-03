@@ -6,15 +6,19 @@
 
 html {
 	line-height: 1;
-	font-size: 10px;
+	font-size: 6px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	// text-rendering: optimizelegibility;
 	-webkit-overflow-scrolling: touch;
+	@include media(sm){
+		font-size: 9px;
+	}
 	@include media(xl){
 		font-size: 10px;
 	}
 }
+
 
 body {
 	font-family: $font-stack;
@@ -25,6 +29,45 @@ body {
 	position: relative;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-overflow-scrolling: touch;
+}
+
+#preloader{
+	position: fixed;
+	z-index: 9999;
+	background-color: #000;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1);
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: #fff;
+		// transition: transform 0.3s ease;
+		// transform: translateY(-100%);
+		animation: fadeInBottomBig 1.5s alternate both;
+	}
+	.mask{
+		z-index: 2;
+	}
+
+	.loaded &{
+		transform: scale(20);
+		opacity: 0;
+		visibility: hidden;
+		transition: transform 2s ease, opacity 1s ease, visibility 1s ease;
+		transition-delay: 1s;
+		&:before{
+			transform: translateY(0);
+		}
+	}
 }
 
 a {
@@ -72,8 +115,38 @@ b {
 	font-weight: 900;
 }
 
+.unbreakable{
+	white-space: nowrap;
+}
+
 .text-caps {
 	text-transform: uppercase;
+}
+
+.fp-viewing-last{ 
+	.page.footer{
+		transform: translateX(0);
+		transition-delay: 0.3s
+	}
+
+	.main-logo {
+		svg path {
+			fill: #333 !important;
+		}
+	}
+
+	@include media(tolg){
+		.main-nav,
+		#fp-nav{
+			color: #333
+		}
+
+		.socials {
+			svg path {
+				fill: #333 !important;
+			}
+		}
+	}
 }
 
 .back-to-top {
@@ -81,6 +154,9 @@ b {
 	font-weight: 500;
 	font-size: 14px;
 	text-transform: uppercase;
+	@include media(xs){
+		display: none;
+	}
 }
 
 // style
@@ -88,7 +164,10 @@ b {
 	position: relative;
 	width: 100%;
 	z-index: 2;
-	height: 40rem;
+	height: 30rem;
+	@include media(xs){
+		height: 40rem;
+	}
 }
 
 .overlay {
@@ -194,6 +273,7 @@ b {
 	right: 3rem;
 	z-index: $zi-navs;
 	color: #fff;
+	transition: color 1s ease;
 	&_btn {
 		display: block;
 		width: 32px;
@@ -227,10 +307,10 @@ b {
 		}
 	}
 	.nav-menu {
-		padding-right: 40px;
+		padding-right: 2rem;
 		a {
 			font-size: 18px;
-			margin: 0 20px;
+			margin: 0 2rem;
 			line-height: 1;
 			opacity: 0;
 			transform: translateY(-15px);
@@ -238,7 +318,7 @@ b {
 			visibility: hidden;
 		}
 	}
-	&.open {
+	&.is-opened {
 		.main-nav_btn {
 			span {
 				width: 100%;
@@ -260,7 +340,6 @@ b {
 			a {
 				opacity: 1;
 				transform: translateY(0);
-				transition: all 0.3s ease;
 				visibility: visible;
 				&:nth-child(1) {
 					transition-delay: 0.1s;
@@ -277,10 +356,55 @@ b {
 			}
 		}
 	}
+
+	@include media(toxl){
+		.nav-menu{
+			background-color: #000;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			padding: 0;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 0.5s ease, visibility 0.5s ease;
+			a{
+				margin: 5rem;
+				font-size: 4rem;
+			}
+		}
+
+		&.is-opened{
+			.nav-menu{
+				visibility: visible;
+				opacity: 1;
+				a{
+					&:nth-child(1) {
+						transition-delay: 0.4s;
+					}
+					&:nth-child(2) {
+						transition-delay: 0.5s;
+					}
+					&:nth-child(3) {
+						transition-delay: 0.6s;
+					}
+					&:nth-child(4) {
+						transition-delay: 0.7s;
+					}
+				}
+			}
+		}
+	}
 }
 
 #fp-nav {
-	z-index: $zi-navs;
+	z-index: $zi-navs - 1;
+	color: #fff;
+	transition: color .5s ease;
 	&.right {
 		right: 3rem;
 	}
@@ -295,17 +419,17 @@ b {
 			&:hover {
 				& a {
 					& span {
-						width: 1.2rem;
+						width: 12px;
 						margin: 0;
-						height: 1.2rem;
-						background: #fff;
+						height: 12px;
+						background: currentColor;
 					}
 					&.active {
 						& span {
-							width: 1.2rem;
-							height: 1.2rem;
+							width: 12px;
+							height: 12px;
 							margin: 0;
-							background: #fff;
+							background: currentColor;
 						}
 					}
 				}
@@ -314,19 +438,19 @@ b {
 				& span {
 					background: transparent;
 					border: none;
-					width: 1.2rem;
-					height: 1.2rem; // box-shadow: 0 0 0 0.1rem #ffffff
-					border: 0.1rem solid #ffffff;
+					width: 12px;
+					height: 12px;
+					border: 1px solid currentColor;
 					left: 0;
 					margin: 0;
 					transition: all 0.5s ease;
 				}
 				&.active {
 					& span {
-						width: 1.2rem;
-						height: 1.2rem;
+						width: 12px;
+						height: 12px;
 						margin: 0;
-						background: #fff;
+						background: currentColor;
 					}
 				}
 			}
@@ -338,18 +462,10 @@ b {
 	top: 3rem;
 	left: 3rem;
 	position: fixed;
-	z-index: $zi-page + 1;
+	z-index: $zi-navs + 3;
 	svg path {
 		fill: #fff;
 		transition: fill 1s ease
-	}
-}
-
-.fp-viewing-last {
-	.main-logo {
-		svg path {
-			fill: #333 !important;
-		}
 	}
 }
 
@@ -372,6 +488,9 @@ b {
 	svg {
 		width: 22px;
 		height: 16px;
+		path{
+			transition: fill 1s ease;
+		}
 	}
 }
 
@@ -384,15 +503,35 @@ b {
 	height: 4px;
 	transform: translateY(-50%);
 	background: #fff;
+	@media screen and (max-width: 400px){
+		width: 2rem;
+		top: 30%;
+	}
+	@include media(lg){
+		top: 35%;
+	}
 	@include media(xl){
 		top: 50%;
+	}
+}
+
+.nav-is-opened{
+	@include media(toxl){
+		&.fp-viewing-last .main-nav, 
+		&.fp-viewing-last #fp-nav{
+			color: #fff;
+		}
+
+		&.fp-viewing-last .main-logo svg path{
+			fill: #fff !important;
+		}
 	}
 }
 
 .main {
 	will-change: transform;
 	backface-visibility: hidden;
-	z-index: 3;
+	z-index: $zi-overlay;
 	.section {
 		width: 100%;
 		position: relative;
@@ -411,6 +550,12 @@ b {
 			top: 40%;
 			position: absolute;
 			z-index: 3;
+			@media screen and (max-width: 400px){
+				top: 30%;
+			}
+			@include media(lg){
+				top: 35%;
+			}
 			@include media(xl){
 				top: 50%;
 			}
@@ -420,6 +565,9 @@ b {
 				padding: 0 5rem 0 9.5rem;
 				opacity: 0;
 				transition: opacity $page-scroll-speed ease;
+				@media screen and (max-width: 400px){
+					padding: 0 6rem 0 3rem;
+				}
 				&.index-section {
 					width: 100%;
 					max-width: 100%;
@@ -429,8 +577,17 @@ b {
 				position: relative;
 				font-size: 10rem;
 				margin-top: -0.5em;
+				@media screen and (max-width: 400px){
+					font-size: 9rem;
+				}
 				&-h1 {
-					font-size: 16rem;
+					font-size: 13rem;
+					@include media(sm){
+						font-size: 16rem;
+					}
+					@media screen and (max-width: 400px){
+						font-size: 11rem;
+					}
 				}
 				&-text {
 					padding: 3rem 0 0 0;
@@ -441,10 +598,14 @@ b {
 				&-link {
 					position: absolute;
 					top: calc(100% + 4rem);
-					margin-left: 16rem;
+					margin-left: 9.5rem;
 					left: 0;
+					@media screen and (max-width: 400px){
+						margin-left: 3rem;
+					}
 					@include media(xl) {
-						top: calc(100% + 7rem);						
+						top: calc(100% + 7rem);		
+						margin-left: 16rem;				
 					}
 				}
 			}
@@ -470,13 +631,24 @@ b {
 	top: 0;
 	left: 0;
 	transition: transform $page-scroll-speed ease;
-	width: 55%;
+	width: 100%;
 	height: 100%;
 	transform: translateX(-100%);
 	background: #fff;
-	z-index: 6;
+	color: #666;
+	z-index: $zi-page;
 	overflow: hidden;
-	font-size: 10px;
+	font-size: 7px;
+	@include media(md){
+		font-size: 9px;		
+	}
+	@include media(lg){
+		width: 65%;
+	}
+	@include media(xl){
+		width: 55%;
+		font-size: 10px;
+	}
 	&.active {
 		transform: translateX(0);
 	}
@@ -488,7 +660,7 @@ b {
 		z-index: 2;
 	}
 	p{
-		// font-size: 2.6rem;
+		font-size: 2.6rem;
 	}
 	.back-to-top {
 		position: absolute;
@@ -503,8 +675,12 @@ b {
 		}
 	}
 	&-content {
-		padding: 8.5em 8.5rem 0 8.5em;
-		margin-top: 100px;
+		padding: 8.5em 2rem 0 2em;
+		margin-top: 50px;
+		@include media(sm){
+			margin-top: 100px;
+			padding: 8.5em 8.5rem 0 8.5em;
+		}
 		&_wrap {
 			width: calc(100% + 50px);
 			max-height: 100%;
@@ -514,25 +690,31 @@ b {
 			overflow-x: hidden;
 		}
 		&.job-content {
-			color: #666;
-			font-size: 2rem;
-			line-height: 1.8;
 			.page-title {
-				color: #000;
+				@include media(xs){
+					text-align: center;
+				}
 			}
 			.job-role {
 				font-size: 2.6rem;
 				padding-top: 10px;
-				color: #666;
+				@include media(xs){
+					text-align: center;
+				}
 			}
 			.job-description {
 				padding-top: 11rem;
+				font-size: 2rem;
+				line-height: 1.8;
 				&+.job-description {
 					padding-top: 14rem;
 				}
 				.page-items__title {
 					padding-bottom: 5rem;
 					opacity: 1;
+					@include media(xs){
+						text-align: center;
+					}
 				}
 			}
 			.job-list {
@@ -555,48 +737,27 @@ b {
 	}
 	&-header {
 		padding-bottom: 9.5rem;
+		@include media(xs){
+			text-align: center;
+		}
 	}
 	&-title {
 		font-size: 8rem;
 		padding-bottom: 4rem;
+		color: #333;
 	}
 	&-description {
-		color: #333333;
 		&+.page-description {
 			padding-top: 6rem;
-		}
-	}
-	&-mask {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-		transition: opacity $page-scroll-speed ease, visibility $page-scroll-speed ease;
-		z-index: $zi-page-overlay;
-		opacity: 0;
-		visibility: hidden;
-		&.active {
-			opacity: 1;
-			transition: opacity $page-scroll-speed + 0.2s 0.2s ease, visibility $page-scroll-speed + 0.2s 0.2s ease;
-			visibility: visible;
-		}
-		&>svg {
-			width: 100%;
-			height: inherit;
-			.alpha {
-				fill: #fff;
-			}
-			.base {
-				fill: rgba(0, 0, 0, 0.7);
-				mask: url(#pagemask);
-				mask-size: cover;
-			}
 		}
 	}
 	&-items {
 		position: relative;
 		padding-left: 8em;
+		@include media(xs){
+			padding-left: 0;
+		}
+
 		& .transform__title {
 			position: absolute;
 			top: 0;
@@ -606,25 +767,43 @@ b {
 			font-weight: 900;
 			text-transform: uppercase;
 			writing-mode: tb-rl;
+			@include media(xs){
+				display: none;
+			}
 		}
 		&__item {
 			display: block;
-			padding: 0 15px 24rem 15px;
+			padding: 0 15px 24rem 9.5em;
 			position: relative;
+			@include media(xs){
+				padding: 0 0 24rem 2em;
+			}
 			&:before {
 				content: '';
 				width: 1px;
 				height: 100%;
 				position: absolute;
 				top: 0;
-				left: 5em;
+				left: 4.25em;
 				background-color: #1e1e1e;
 				opacity: 0.3;
+				@include media(xs){
+					left: 0;
+				}
 			}
 		}
 		&__media {
 			position: relative;
 			margin-top: 19rem;
+			width: calc(100% + 11.5em);
+			margin-left: -9.5em;
+			@include media(xs){
+				width: calc(100% + 4em);
+				margin-left: -3em;				
+			}
+			@include media(sm){
+				width: calc(100% + 9.5em);
+			}
 			img {
 				display: block;
 				max-width: 100%;
@@ -641,46 +820,52 @@ b {
 			color: #333333;
 			font-size: 4rem;
 			&-wrap {
-				padding-left: 9.5em;
 				min-height: 10rem;
 				position: relative;
 				margin-bottom: 2rem;
 				&:after {
 					content: '';
 					position: absolute;
-					height: 100px;
+					height: 100%;
 					width: 5px;
 					top: 0;
-					left: calc(5em - 15px);
+					left: -5.2em;
 					transform: translateX(-50%);
 					z-index: 2;
 					background-color: #333;
+					@include media(xs){
+						left: -2em;
+					}
 				}
 			}
 		}
 		&__role {
 			margin: 1.5rem 0;
-			color: #333333;
 			font-size: 2rem;
 			font-weight: 400;
-			padding-left: 9.5em;
 		}
 		&__description {
-			color: #666666;
 			font-size: 2rem;
 			font-weight: 400;
 			line-height: 1.8;
-			padding-left: 9.5em;
 		}
 		&_icon {
 			position: absolute;
 			top: 50%;
-			right: calc(100% + 15px);
+			left: calc(-9.5em - 8em);
 			transform: translateY(-50%);
+			@include media(xs){
+				display: none;
+			}
+			svg{
+				max-width: 8em;
+				width: 100%;
+			}
 		}
 	}
 
 	&.footer {
+		z-index: $zi-navs - 1;
 		& .maps {
 			position: relative;
 			width: 100%;
@@ -698,7 +883,10 @@ b {
 		.tabs {
 			height: 100%;
 			&-nav {
-				padding: 16rem 0;
+				padding: 16rem 0 5rem;
+				@include media(xl){
+					padding: 16rem 0;
+				}
 				&__link {
 					color: #666;
 					font-size: 2.6rem;
@@ -735,14 +923,21 @@ b {
 					color: #666;
 					line-height: 1.8;
 					max-width: 320px;
+					text-align: center;
+					@include media(xl){
+						text-align: left;
+					}
 				}
 				& .general {
 					&-site {
-						margin: 11rem 0 4rem 0;
 						text-align: center;
 						color: #666;
 						font-size: 1.8rem;
 						font-weight: 400;
+						margin: 4rem 0 2rem 0;
+						@include media(xl){
+							margin: 11rem 0 4rem 0;
+						}
 						& a {
 							color: #333;
 						}
@@ -751,15 +946,42 @@ b {
 			}
 		}
 	}
+
+	&-mask {
+		position: absolute;
+		top: 0;
+		right: -5%;
+		width: 100%;
+		height: 100%;
+		transition: opacity $page-scroll-speed ease, visibility $page-scroll-speed ease;
+		z-index: $zi-page-overlay;
+		opacity: 0;
+		visibility: hidden;
+		@include media(xl){
+			right: 0;
+		}
+		&.active {
+			opacity: 1;
+			transition: opacity $page-scroll-speed + 0.2s 0.2s ease, visibility $page-scroll-speed + 0.2s 0.2s ease;
+			visibility: visible;
+		}
+		&>svg {
+			width: 100%;
+			height: inherit;
+			.alpha {
+				fill: #fff;
+			}
+			.base {
+				fill: rgba(0, 0, 0, 0.7);
+				mask: url(#pagemask);
+				mask-size: cover;
+			}
+		}
+	}
 }
 
 [data-page=careers-detail]{
-	z-index: 7;
-}
-
-.fp-viewing-last .page.footer{
-	transform: translateX(0);
-	transition-delay: 0.3s
+	z-index: $zi-page + 1;
 }
 
 // .fadeInLeft{
@@ -791,7 +1013,7 @@ b {
 		.page-items,
 		.job-content,
 		.page-back,
-		// .back-to-top,
+		.page-items__role,
 		.page-items__title-wrap:after {
 			opacity: 0;
 			animation-fill-mode: both;
@@ -821,7 +1043,8 @@ b {
 			.in-view {
 				.page-items__title,
 				.page-items__description,
-				.page-items__media {
+				.page-items__media,
+				.page-items__role {
 					animation-name: fadeInLeft;
 				}
 				.page-items_icon,
@@ -861,13 +1084,24 @@ b {
 	}
 }
 
+@keyframes fadeInBottomBig {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -100%, 0)
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0)
+	}
+}
+
 .backgrounds {
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 2;
+	z-index: $zi-bgs;
 }
 
 .backgrounds .section {
@@ -911,7 +1145,7 @@ b {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 2;
+	z-index: $zi-overlay;
 }
 
 .backgrounds .section-mask svg {

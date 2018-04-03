@@ -70,6 +70,10 @@
   flex: none;
 }
 
+.flex-grow{
+  flex-grow: 1;
+}
+
 // Basic flexbox reverse styles
 .layout.horizontal-reverse,
 .layout.vertical-reverse {

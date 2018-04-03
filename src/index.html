@@ -16,12 +16,33 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.png" type="image/png">
   <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- <script src="https://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script> -->
   <script src="js/libs.js"></script>
   <script src="js/main.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCVTacYbB7V_Yxqf2gqPG_SOVVop6rmS4"></script>
 </head>
 
 <body>
+  <div id="preloader">
+    <div class="mask fit">
+      <svg width="100%" height="100%">
+        <defs>
+          <mask id="mask-preloader" x="0" y="0" width="100%" height="100%">
+            <rect class="alpha" fill="#fff" x="0" y="0" width="100%" height="100%" />
+            <?xml version="1.0" encoding="UTF-8"?>
+            <svg width="100%" height="70%" y="15%" viewBox="0 0 101 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="mask-g" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <polygon id="ymetis_logo-path" fill="#000" points="38.6871728 64.8203479 0.012 0.376 27.5967501 0.376 50.2914374 38.7343036 72.9861247 0.376 100.570875 0.376 61.8957021 64.8203479 61.8957021 95 38.6871728 95 38.6871728 64.8203479"></polygon>
+              </g>
+            </svg>
+          </mask>
+        </defs>
+        <rect class="base" x="0" y="0" width="100%" height="100%" style="fill: #000; mask: url(#mask-preloader);mask-size: cover" />
+      </svg>
+    </div>
+  </div>
+
   <div class="socials layout vertical center-center">
     <a href="#">
       <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 22 13">
@@ -39,7 +60,7 @@
   </div>
   <div class="direct-line"></div>
 
-  <a href="#home" class="main-logo">
+  <a href="#page1" class="main-logo">
     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 127 32" preserveAspectRatio="xMidYMid meet" width="128px" height="32px">
       <path fill-rule="evenodd" d="M119.169 4.824c-1.713 0-2.686.689-2.686 1.837 0 1.057.88 1.608 3.658 2.572 4.307 1.47 6.113 3.629 6.159 6.936 0 4.18-3.334 7.257-9.817 7.257-2.963 0-6.38-1.414-8.093-2.332l1.25-5.007c1.297.781 4.76 2.471 6.843 2.471 2.13 0 3.01-.735 3.01-1.884 0-1.148-.694-1.699-3.334-2.572-4.677-1.562-6.482-4.088-6.436-6.752 0-4.18 3.612-7.349 9.215-7.349 2.639 0 5.777.597 7.167 1.286l-1.251 4.823c-1.018-.551-3.74-1.286-5.685-1.286zm-15.092 12.275h-.022v5.375H98.68v-5.375h-.022V5.751h-.017V.376h5.452v5.375h-.016v11.348zm-16.848 5.375H81.81V5.751h-6.925V.376h19.268v5.375h-6.924v16.723zm-33.55-2.688V3.063c0-1.463 1.235-2.687 2.71-2.687H71.11v5.375H59.098v2.986h11.109v5.376H59.098v2.986H71.11v5.375H56.389c-1.475 0-2.71-1.224-2.71-2.688zM44.124 10.2l-5.991 6.928-5.991-6.928v12.274h-5.419V11.966l5.736-9.558 5.674 6.538 6.894-7.943c.481-.537 1.174-.896 1.956-.896 1.415 0 2.559 1.165 2.559 2.538v19.829h-5.418V10.2zM15.15 22.474H9.731v-7.048L.7.376h6.442l5.299 8.958L17.74.376h6.442l-9.032 15.05v7.048zm110.326 9.525H9.629v-1.125h115.847v1.125z"
       />
@@ -70,26 +91,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="section-bg fit">
-        <img src="images/bg1.jpg" alt="">
-
-        <div class="mask fit">
-          <svg width="100%" height="100%">
-            <defs>
-              <mask id="mask" x="0" y="0" width="100%" height="100%">
-                <rect class="alpha" fill="#ccc" x="0" y="0" width="100%" height="100%" />
-                <?xml version="1.0" encoding="UTF-8"?>
-                <svg width="100%" height="70%" y="15%" viewBox="0 0 101 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <g id="mask" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <polygon id="ymetis_logo-path" fill="#333333" points="38.6871728 64.8203479 0.012 0.376 27.5967501 0.376 50.2914374 38.7343036 72.9861247 0.376 100.570875 0.376 61.8957021 64.8203479 61.8957021 95 38.6871728 95 38.6871728 64.8203479"></polygon>
-                  </g>
-                </svg>
-              </mask>
-            </defs>
-            <rect class="base" x="0" y="0" width="100%" height="100%" style="fill: #000; mask: url(#mask);mask-size: cover" />
-          </svg>
-        </div>
-      </div> -->
     </div>
 
     <div class="section with-text">
@@ -104,11 +105,6 @@
           </a>
         </div>
       </div>
-
-      <!-- <div class="section-bg fit">
-        <img src="images/bg2n.jpg" alt="">
-        <div class="overlay"></div>
-      </div> -->
     </div>
 
     <div class="section with-text">
@@ -122,11 +118,6 @@
           </a>
         </div>
       </div>
-
-      <!-- <div class="section-bg fit">
-        <img src="images/bg3n.jpg" alt="">
-        <div class="overlay"></div>
-      </div> -->
     </div>
 
     <div class="section with-text">
@@ -141,11 +132,6 @@
           </a>
         </div>
       </div>
-
-      <!-- <div class="section-bg fit">
-        <img src="images/bg4n.jpg" alt="">
-        <div class="overlay"></div>
-      </div> -->
     </div>
 
     <div class="section icon-bg-black">
@@ -322,7 +308,7 @@
 
             <div class="page-items__item">
               <div class="page-items__title-wrap layout horizontal center start">
-                <h3 class="page-items__title">ORGANIZATIONAL RE-DESIGN</h3>
+                <h3 class="page-items__title">ORGANIZATIONAL <span class="unbreakable">RE-DESIGN</span></h3>
                 <div class="page-items_icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="106" height="86" viewBox="0 0 106 86">
                     <path class="cls-1" d="M95,1201H79.012c0-5.52-.012-10.43-0.012-16h7c0-17.59,0-36.38,0-54H79c0-5.58,0-10.44,0-15.98,5.51,0,10.458-.02,16-0.02v7h54v-7h16v16c-1.916,0-3.341-.08-6.062-0.08,0,17.6.061,36.48,0.062,54.08h6v15.98c-5.5,0-10.437.02-16,.02v-6c-17.612,0-36.936.01-54.052,0.01C94.948,1196.89,94.973,1199.01,95,1201Zm54-77H95v7H88v54h7v8h54v-8c3.116,0,5.379.01,8,0v-54h-8v-7Zm-23.627,44.94c-1.946-1.98-3.84-3.9-5.748-5.83-5.192,5.19-6.324,7.32-11.428,12.43-0.925-.93-1.8-1.8-2.68-2.68,5.1-5.09,6.223-7.22,11.381-12.37-1.965-1.94-3.89-3.85-5.9-5.83,6.594-1.76,13.048-3.49,19.6-5.25C128.853,1155.95,127.122,1162.41,125.373,1168.94ZM81,1117H93v12H81v-12Zm0,70H93v12H81v-12Zm70,0h12v12H151v-12Zm-15.3-44.69c0.568,0.56,1.172,1.15,1.767,1.73-0.623.6-1.247,1.19-1.839,1.76-0.53-.54-1.134-1.16-1.717-1.75C134.461,1143.51,135.077,1142.91,135.7,1142.31Zm1.683-5.79c-0.538.55-1.128,1.17-1.715,1.77-0.59-.61-1.177-1.23-1.706-1.78,0.537-.54,1.145-1.15,1.71-1.71C136.168,1135.3,136.776,1135.91,137.38,1136.52Zm5.782,9.33c-0.541-.55-1.134-1.15-1.681-1.71,0.588-.58,1.2-1.19,1.772-1.75,0.5,0.51,1.1,1.12,1.641,1.68C144.387,1144.59,143.774,1145.22,143.162,1145.85Zm1.841-9.31c-0.543.55-1.139,1.15-1.722,1.73-0.587-.62-1.18-1.24-1.754-1.84,0.522-.5,1.145-1.1,1.725-1.65C143.757,1135.29,144.365,1135.9,145,1136.54Zm-4.264-2.94v2.58h-2.584v-2.58h2.584Zm-5.366,5.38v2.58h-2.584v-2.58h2.584Zm2.8,5.37h2.562v2.59h-2.562v-2.59Zm5.337-2.8v-2.57h2.584v2.57h-2.584ZM164,1144.01h2.009V1157H164v-12.99Zm6.991,24H169V1155h1.991v13.01ZM65,1174.01h2.009V1187H65v-12.99Zm6.991,24H70V1185h1.991v13.01Zm30.257-21.88c0.731-.71.714-0.69,1.443-1.4,3.016,3.11-.95-0.98,2.078,2.15-0.721.69-.7,0.68-1.444,1.39C101.33,1175.18,103.719,1177.65,102.248,1176.13Zm-3,3c0.731-.71.714-0.69,1.443-1.4,3.016,3.11-.95-0.98,2.077,2.15-0.72.69-.7,0.68-1.442,1.39C98.33,1178.18,100.719,1180.65,99.248,1179.13Z"
@@ -456,7 +442,7 @@
           <a href="#" class="tabs-nav__link">Gurgaon</a>
         </div>
         <div class="tabs-content layout vertical flex active">
-          <div class="layout horizontal center-center wrap">
+          <div class="layout horizontal center-center wrap flex-grow">
             <div>
               <div class="footer-content">
                 <p class="tabs-content__text"> Alpha Tower | 13th floor De Entree 69, 1101 BH Amsterdam The Netherlands</p>
@@ -495,7 +481,7 @@
         </div>
 
         <div class="tabs-content layout vertical flex">
-          <div class="layout horizontal center-center wrap">
+          <div class="layout horizontal center-center wrap flex-grow">
             <div>
               <div class="footer-content">
                 <p class="tabs-content__text"> Alpha Tower | 13th floor De Entree 69, 1101 BH Amsterdam The Netherlands</p>
@@ -648,7 +634,6 @@
         <defs>
           <mask id="pagemask" x="0" y="0" width="100%" height="100%">
             <rect class="alpha" x="0" y="0" width="100%" height="100%" />
-            <!-- <text class="title" x="50%" y="50%" dy=".355em">Y</text> -->
             <?xml version="1.0" encoding="UTF-8"?>
             <svg width="35%" height="100%" x="60%" viewBox="0 0 101 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="mask" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

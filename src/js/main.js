@@ -39,7 +39,8 @@ $(document).ready(function ($) {
 	});
 
 	$('.main-nav_btn').click(function () {
-		$(this).parent('.main-nav').toggleClass('open');
+		$(this).parent('.main-nav').toggleClass('is-opened');
+		$('body').toggleClass('nav-is-opened');		
 		return false
 	});
 
@@ -335,7 +336,7 @@ $(document).ready(function ($) {
 		return false
 	});
 
-	$('.title-link').click(function (event) {
+	$('.title-link[data-sheet]').click(function (event) {
 		page = $(this).data('sheet');
 		pageIndex = $('[data-page=' + page + ']');
 
@@ -347,17 +348,30 @@ $(document).ready(function ($) {
 		return false
 	});
 
-	$('.nav-menu a[data-sheet]').click(function (event) {
-		page = $(this).data('sheet');
-		pageIndex = $('[data-page=' + page + ']');
+	$('.nav-menu a').click(function (event) {
+		if($(this).is('[data-sheet]')){
+			page = $(this).data('sheet');
+			pageIndex = $('[data-page=' + page + ']');
 
-		$.fn.fullpage.setAllowScrolling(false);
-		$('[data-page=' + page + ']').addClass('active');
-		$('.page-mask').addClass('active')
-		$('body').addClass('page-opened')
-		pageAnimation(page);
-		// return false
+			// $(this).parents('.main-nav').toggleClass('is-opened');
+			// console.log($(this).parents());
+			$.fn.fullpage.setAllowScrolling(false);
+			$('[data-page=' + page + ']').addClass('active');
+			$('.page-mask').addClass('active')
+			$('body').addClass('page-opened')
+			pageAnimation(page);
+		}
+		else{			
+		}
+
+		$(this).parents('.main-nav').toggleClass('is-opened');
+		$('body').toggleClass('nav-is-opened');
 	});
+
+	// $('.nav-menu a').click(function (event) {
+	// 	$(this).parents('.main-nav').toggleClass('is-opened');
+	// 	// return false;
+	// });
 
 	$('.link-detail').click(function (event) {
 		page = $(this).data('sheet')

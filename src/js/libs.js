@@ -1,4 +1,5 @@
-@@include('./node_modules/jquery/dist/jquery.min.js')
+// @@include('./node_modules/jquery/dist/jquery.min.js')
+@@include('./node_modules/imagesloaded/imagesloaded.pkgd.min.js')
 @@include('./node_modules/gsap/TweenMax.js')
 @@include('./node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js')
 @@include('./node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js')

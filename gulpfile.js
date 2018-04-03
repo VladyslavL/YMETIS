@@ -88,7 +88,7 @@ gulp.task('dev', ['html', 'style', 'script', 'images', 'move'], function () {
     server: {
       baseDir: 'dist'
     },
-    notify: true
+    // notify: true
   });
 
   gulp.watch("src/sass/**/*.+(scss|sass)", ['style']);
