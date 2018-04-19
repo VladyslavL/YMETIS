@@ -11,4 +11,5 @@ node_modules/
 bower_components/
 dist/
 app/
+src/fonts/
 package-lock.json

@@ -66,6 +66,10 @@ gulp.task('move', function () {
     }))
     .pipe(gulp.dest('dist/fonts/'))
 
+  gulp.src(['src/videos/**/*'])
+    .pipe(plumber())
+    .pipe(gulp.dest('dist/videos/'))
+
   gulp.src(['src/php/**/*'])
     .pipe(plumber())
     .pipe(fileInclude({
@@ -152,6 +156,10 @@ gulp.task('b-move', function () {
       basepath: '@root'
     }))
     .pipe(gulp.dest('app/fonts/'))
+
+    gulp.src(['src/videos/**/*'])
+    .pipe(plumber())
+    .pipe(gulp.dest('app/videos/'))
 
   gulp.src(['src/php/**/*'])
     .pipe(plumber())
