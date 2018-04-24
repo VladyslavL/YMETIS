@@ -23,7 +23,7 @@ html {
 body {
 	font-family: $font-stack;
 	font-weight: normal;
-	font-size: 2.6rem;
+	font-size: 2.4rem;
 	line-height: 1.5;
 	color: inherit;
 	position: relative;
@@ -275,6 +275,7 @@ b {
 	z-index: $zi-navs;
 	color: #fff;
 	transition: color 1s ease;
+	font-weight: 500;
 	&_btn {
 		display: block;
 		width: 32px;
@@ -308,7 +309,7 @@ b {
 		}
 	}
 	.nav-menu {
-		background-color: rgba(0, 0, 0, .8);
+		background-color: rgba(0, 0, 0, .95);
 		position: fixed;
 		width: 100%;
 		height: 100%;
@@ -323,12 +324,20 @@ b {
 		transition: opacity 0.5s ease, visibility 0.5s ease;
 		a {
 			margin: 5rem;
-			font-size: 4rem;
+			font-size: 24px;
 			line-height: 1;
 			opacity: 0;
 			transform: translateY(-15px);
 			transition: transform 0.3s 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 			visibility: hidden;
+			span{
+				transition: color 0.3s ease;
+			}
+			&:hover{
+				span{
+					color: #444;
+				}
+			}
 		}
 	}
 
@@ -392,15 +401,15 @@ b {
 			&:hover {
 				& a {
 					& span {
-						width: 12px;
+						width: 100%;
 						margin: 0;
-						height: 12px;
+						height: 100%;
 						background: currentColor;
 					}
 					&.active {
 						& span {
-							width: 12px;
-							height: 12px;
+							width: 100%;
+							height: 100%;
 							margin: 0;
 							background: currentColor;
 						}
@@ -411,8 +420,8 @@ b {
 				& span {
 					background: transparent;
 					border: none;
-					width: 12px;
-					height: 12px;
+					width: 100%;
+					height: 100%;
 					border: 1px solid currentColor;
 					left: 0;
 					margin: 0;
@@ -420,12 +429,22 @@ b {
 				}
 				&.active {
 					& span {
-						width: 12px;
-						height: 12px;
+						width: 100%;
+						height: 100%;
 						margin: 0;
 						background: currentColor;
 					}
 				}
+			}
+		}
+	}
+
+	@include media(xs){
+		ul{
+			li{
+				width: 10px;
+				height: 10px;
+				margin-top: 15px;
 			}
 		}
 	}
@@ -447,6 +466,9 @@ b {
 	bottom: 4rem;
 	right: 3rem;
 	z-index: $zi-navs;
+	@include media(xs){
+		display: none !important;
+	}
 	a {
 		line-height: 1;
 		transition: opacity .5s ease;
@@ -548,7 +570,7 @@ b {
 			}
 			& .title {
 				position: relative;
-				font-size: 10rem;
+				font-size: 8rem;
 				margin-top: -0.5em;
 				@media screen and (max-width: 400px){
 					font-size: 9rem;
@@ -561,7 +583,7 @@ b {
 				&-h1 {
 					font-size: 13rem;
 					@include media(sm){
-						font-size: 16rem;
+						font-size: 12rem;
 					}
 					@media screen and (max-width: 400px){
 						font-size: 11rem;
@@ -637,9 +659,12 @@ b {
 		top: 3rem;
 		z-index: 2;
 	}
-	p{
-		font-size: 2.6rem;
+	&:not(.footer){
+		p{
+			font-size: 2.6rem;
+		}
 	}
+	
 	.back-to-top {
 		position: absolute;
 		right: 20px;
@@ -720,7 +745,7 @@ b {
 		}
 	}
 	&-title {
-		font-size: 8rem;
+		font-size: 7rem;
 		padding-bottom: 4rem;
 		color: #333;
 	}
@@ -775,6 +800,7 @@ b {
 			margin-top: 19rem;
 			width: calc(100% + 11.5em);
 			margin-left: -9.5em;
+			max-width: 577px;
 			@include media(xs){
 				width: calc(100% + 4em);
 				margin-left: -3em;				
@@ -866,8 +892,8 @@ b {
 					padding: 16rem 0;
 				}
 				&__link {
-					color: #666;
-					font-size: 2.6rem;
+					color: #999;
+					font-size: 2.4rem;
 					font-weight: 400;
 					margin: 0 25px;
 					position: relative;
@@ -880,10 +906,12 @@ b {
 						bottom: 0;
 						height: 0.7em;
 						width: 1px;
+						top: 50%;
+    					transform: translateY(-40%);
 						background-color: rgba(0, 0, 0, .5);
 					}
 					&.active {
-						color: #000;
+						color: #333;
 					}
 				}
 			}
@@ -1108,9 +1136,18 @@ b {
 	}
 
 	video{
-		height: 100%;
+		// height: 100%;
 		transform: translateX(-50%);
-    left: 50vw;
+		left: 50vw;
+		position: absolute;
+		top: 0;
+		// left: 0;
+		// z-index: 1;
+		min-height: 100%;
+		min-width: 100%;
+		height: auto;
+		width: 100%;
+		object-fit: cover;
 	}
 }
 

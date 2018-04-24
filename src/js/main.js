@@ -62,7 +62,7 @@ $(document).ready(function ($) {
 			streetViewControl: false,
 			rotateControl: false,
 			fullscreenControl: false,
-			center: new google.maps.LatLng(55.717072, 37.628792),
+			center: new google.maps.LatLng(52.3115166, 4.9404493),
 			styles: [{
 				"featureType": "water",
 				"elementType": "geometry",
@@ -184,7 +184,7 @@ $(document).ready(function ($) {
 		var mapElement = document.getElementById('map');
 		var map = new google.maps.Map(mapElement, mapOptions);
 		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(55.717036, 37.628825),
+			position: new google.maps.LatLng(52.3115166, 4.9404493),
 			map: map,
 			icon: {
 				url: 'images/pin.png',
