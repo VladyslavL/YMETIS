@@ -51,9 +51,8 @@ $(document).ready(function ($) {
 
 	});
 
-	google.maps.event.addDomListener(window, 'load', init);
-
-	function init() {
+	$('.footer .map').each(function (index, Element){
+		var latlng = new google.maps.LatLng($(Element).data('lat'), $(Element).data('lng'));
 		var mapOptions = {
 			zoom: 11,
 			scrollwheel: false,
@@ -62,7 +61,7 @@ $(document).ready(function ($) {
 			streetViewControl: false,
 			rotateControl: false,
 			fullscreenControl: false,
-			center: new google.maps.LatLng(52.3115166, 4.9404493),
+			center: latlng,	
 			styles: [{
 				"featureType": "water",
 				"elementType": "geometry",
@@ -181,10 +180,10 @@ $(document).ready(function ($) {
 			}]
 		};
 
-		var mapElement = document.getElementById('map');
-		var map = new google.maps.Map(mapElement, mapOptions);
+		var map = new google.maps.Map(Element, mapOptions);
+		
 		var marker = new google.maps.Marker({
-			position: new google.maps.LatLng(52.3115166, 4.9404493),
+			position: latlng,			
 			map: map,
 			icon: {
 				url: 'images/pin.png',
@@ -193,10 +192,8 @@ $(document).ready(function ($) {
 				size: new google.maps.Size(69, 76),
 			},
 			title: 'YMetis'
-
 		});
-		console.log('map.inited');
-	}
+	});
 
 
 	$('.section-content--contact .tabs, .map')
