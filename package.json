@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "autoprefixer": "*",
+    "autoprefixer": "8.5",
     "normalize.css": "*",
     "browser-sync": "*",
     "gulp": "^3.9.1",
@@ -15,12 +15,12 @@
     "gulp-html-minifier": "^0.1.8",
     "gulp-image": "^4.2.0",
     "gulp-plumber": "*",
-    "gulp-sass": "*",
-    "gulp-sourcemaps": "*",
+    "gulp-sass": "3.2.1",
+    "gulp-sourcemaps": "1.5.2",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "vinyl-ftp": "^0.6.1",
-    "fullpage.js": "*",
-    "jquery": "*"
+    "fullpage.js": "2.9.7",
+    "jquery": "3.2.1"
   }
 }
